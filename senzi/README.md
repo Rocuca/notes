@@ -38,7 +38,6 @@ senzi/
 | https://senzi.weebly.com/uploads/4/4/8/4/44849241/351284431.jpg | 351284431.jpg | 五ノ夜（下）留下的 |
 | https://senzi.weebly.com/uploads/4/4/8/4/44849241/792418100.jpg | 792418100.jpg | 異聞一（完）櫻吹雪 |
 | https://senzi.weebly.com/uploads/4/4/8/4/44849241/660283509.jpg | 660283509.jpg | 已逝之日 |
-| https://senzi.weebly.com/uploads/4/4/8/4/44849241/1427573578.png | 1427573578.png | 首頁（主視覺／關於） |
 | https://senzi.weebly.com/uploads/4/4/8/4/44849241/3666440_orig.jpg | 3666440_orig.jpg | 藏圖閣（小千日 提供） |
 | https://senzi.weebly.com/uploads/4/4/8/4/44849241/5918597_orig.png | 5918597_orig.png | 藏圖閣（小藻井 提供） |
 | https://senzi.weebly.com/uploads/4/4/8/4/44849241/2989941_orig.jpg | 2989941_orig.jpg | 藏圖閣（古莉絲 提供） |
