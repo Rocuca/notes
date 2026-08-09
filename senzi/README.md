@@ -53,7 +53,26 @@ senzi/
 
 ## 藏圖閣版權提醒
 
-「單色／彩圖」那 8 張是別人畫給站主的應援圖／同人圖，版權屬於原作者（見上表署名），不是站主本人的創作。搬到新網站繼續公開展示前，建議保留完整署名或先聯繫原作者確認。
+「✦（來自於他人的贈圖）」那 8 張是別人畫給站主的應援圖／同人圖，版權屬於原作者（見上表署名），不是站主本人的創作。搬到新網站繼續公開展示前，建議保留完整署名或先聯繫原作者確認。
+
+## 之後想幫「單色」「彩圖」加圖片
+
+藏圖閣頁面（`gallery.html`）目前分成單色、彩圖、✦（來自於他人的贈圖）、小日常四個區塊，單色跟彩圖目前是空的。因為網站是純 HTML，沒有另外的建置流程，所以要新增圖片得直接編輯 `gallery.html`：
+
+1. 先把要用的圖片存進 `images/` 資料夾
+2. 打開 `gallery.html`，找到「單色」或「彩圖」那個標題底下的 `<p class="gallery-empty">（尚未加入圖片）</p>`
+3. 把整段換成類似這樣的區塊（可以直接複製「✦（來自於他人的贈圖）」區塊裡任一個 `<div class="gallery-item">...</div>` 來改）：
+
+```html
+<div class="gallery-grid">
+  <div class="gallery-item">
+    <img src="images/你的檔名.jpg" alt="" loading="lazy" onclick="openLightbox('images/你的檔名.jpg')">
+    <div class="gallery-credit">（如果有想加的說明文字）</div>
+  </div>
+</div>
+```
+
+4. 如果同一區要放多張，把 `<div class="gallery-item">...</div>` 這一整段複製貼上多次，都放在同一個 `<div class="gallery-grid">...</div>` 裡面即可
 
 ## 之後想自己微調內容
 
