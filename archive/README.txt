@@ -17,7 +17,7 @@ duonan/                   讀喃隱藏頁面（gate.html 是防雷頁，其餘�
 
 【下一步】
 1. 打開 assets/images/README.txt，把妳下載好的圖片改名放進 assets/images/
-2. 把整個 site 資料夾內容複製到 notes repo 底下的 lenxia 資料夾
+2. 把整個 site 資料夾內容複製到 notes repo 底下對應的資料夾（例如 archive）
 3. git add . / git commit / git push
 
 【尚未收錄的內容】
