@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>晝行之夜</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<header>
+  <div class="site-title display"><a href="../index.html">走過無數個陽光普照的日子，<br>雨停之後，你還在這裡。</a></div>
+  <nav>
+    <a href="../index.html">主頁面</a>
+    <a href="../daymoon/index.html" class="active">晝行之夜</a>
+    <a href="../nightmare/index.html">惡夢之街</a>
+    <a href="../ticktock/index.html">Tick&nbsp;Tock</a>
+  </nav>
+</header>
+
+<div class="opening">
+  <p>吶、聽說了嗎……？</p>
+</div>
+
+<div class="noise-field" id="field">
+  <span class="whisper" style="top:2%;left:44%;">聽說了嗎？</span>
+  <span class="whisper" style="top:16%;left:12%;">聽說了嗎？</span>
+  <span class="whisper" style="top:19%;left:32%;">聽說了嗎？</span>
+  <span class="whisper w-gold" style="top:22%;left:65%;">聽說了嗎？</span>
+  <span class="whisper" style="top:26%;left:2%;">聽說了嗎？</span>
+  <span class="whisper w-fade" style="top:24%;left:78%;">聽說麼嗎？</span>
+  <span class="whisper" style="top:24%;left:52%;">聽說了嗎？</span>
+  <span class="whisper" style="top:32%;left:0%;">聽說了嗎？</span>
+  <span class="whisper w-gold" style="top:35%;left:38%;">聽說了嗎？</span>
+  <span class="whisper" style="top:36%;left:78%;">聽說了嗎？</span>
+  <span class="whisper" style="top:40%;left:58%;">聽說了嗎？</span>
+  <span class="whisper" style="top:38%;left:10%;">聽說了嗎？</span>
+  <span class="whisper" style="top:44%;left:66%;">聽說了嗎？</span>
+
+  <span class="noise-block" style="top:5%;left:46%;width:34px;height:44px;"></span>
+  <span class="noise-block" style="top:20%;left:15%;width:26px;height:20px;"></span>
+  <span class="noise-block" style="top:17%;left:47%;width:54px;height:14px;"></span>
+  <span class="noise-block" style="top:30%;left:25%;width:20px;height:20px;"></span>
+  <span class="noise-block" style="top:33%;left:56%;width:14px;height:14px;"></span>
+  <span class="noise-block" style="top:39%;left:83%;width:66px;height:14px;"></span>
+  <span class="noise-block" style="top:52%;left:14%;width:96px;height:14px;"></span>
+
+  <span class="whisper w-fade" style="top:62%;left:44%;">聽說了嗎？</span>
+  <span class="whisper w-dim" style="top:65%;left:45%;">聽說了嗎？</span>
+  <span class="whisper" style="top:68%;left:41%;">聽說了嗎—--—--</span>
+</div>
+
+<div class="closing">
+  <p class="warning-line display">惡 夢 中 的 怪 物</p>
+  <p class="sub">千萬、不要大意了呢。</p>
+  <p class="trail">否則—--—--</p>
+  <a class="site-link" href="http://daymoon00.weebly.com/">晝行之夜官網 ↗</a>
+</div>
+
+<div class="toc tight">
+  <p class="toc-heading">紅皮書記事 ・ STORY</p>
+
+  <div class="act">
+    <div class="act-name display">序幕</div>
+    <div class="chapters">
+      <span>01. 夜愛麗絲晚宴</span>
+      <span>02. 無夢少女</span>
+      <span>03. 無首屍，飛蛾</span>
+    </div>
+  </div>
+
+  <div class="act">
+    <div class="act-name display">獨角劇</div>
+    <div class="chapters">
+      <span>01. 美夢馬戲團</span>
+      <span class="unreleased">02. －</span>
+      <span class="unreleased">03. －</span>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var items = document.querySelectorAll('.whisper, .noise-block');
+  if(reduce){
+    items.forEach(function(el){ el.classList.add('in-view'); });
+  } else {
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          var el = entry.target;
+          var delay = Math.random() * 500;
+          setTimeout(function(){ el.classList.add('in-view'); }, delay);
+          observer.unobserve(el);
+        }
+      });
+    }, { root:null, threshold:0.2, rootMargin:'0px 0px -10% 0px' });
+    items.forEach(function(el){ observer.observe(el); });
+  }
+})();
+</script>
+
+<footer>
+  <a class="back-parent" href="../index.html">回到主頁面</a>
+  <p class="mark">- ✣ -</p>
+  說書人 Rinna、拓鹿、夏魚。隨意即可。
+</footer>
+
+</body>
+</html>

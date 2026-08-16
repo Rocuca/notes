@@ -1,0 +1,306 @@
+/* ==========================================================
+   Lenxia 網站共用樣式表
+   ========================================================== */
+
+:root{
+  --paper:#F7F4EE;
+  --paper-2:#F1ECE1;
+  --ink:#3A3530;
+  --ink-soft:#7A736A;
+  --maroon:#8B3A3A;
+  --maroon-soft:#B5645A;
+  --fog:#6B7B8C;
+  --gold:#C9A96E;
+  --line:#DFD8C8;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Noto Serif TC', serif;
+  line-height:1.9;
+  -webkit-font-smoothing:antialiased;
+}
+.display{font-family:'LXGW WenKai TC','Noto Serif TC',serif;}
+a{color:var(--ink);}
+
+/* ---------- 導覽列 ---------- */
+header{
+  padding:28px 6vw 0;
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  border-bottom:1px solid var(--line);
+}
+header.minimal{padding:28px 40px 32px;border-bottom:1px solid var(--line);}
+.site-title{
+  font-size:15px;
+  letter-spacing:.08em;
+  color:var(--ink-soft);
+  max-width:260px;
+  line-height:1.7;
+}
+header.minimal .site-title{font-size:14px;max-width:none;}
+.site-title a{color:inherit;text-decoration:none;}
+nav{display:flex;}
+nav a{
+  display:block;
+  text-decoration:none;
+  color:var(--ink);
+  font-size:15px;
+  letter-spacing:.05em;
+  padding:10px 20px 22px;
+  border-left:1px solid var(--line);
+  position:relative;
+  transition:color .2s ease;
+}
+nav a:last-child{border-right:1px solid var(--line);}
+nav a:hover{color:var(--maroon);}
+nav a.active{color:var(--maroon);}
+nav a.active::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:-34px;
+  transform:translateX(-50%);
+  width:16px;
+  height:36px;
+  background:var(--maroon);
+  clip-path:polygon(0 0,100% 0,100% 80%,50% 100%,0 80%);
+  opacity:.9;
+  z-index:3;
+}
+nav a.no-ribbon::before{content:none;}
+
+/* ---------- 麵包屑 ---------- */
+.crumb{max-width:720px;margin:0 auto;padding:6vh 40px 0;}
+.crumb.wide{max-width:1040px;padding-left:6vw;padding-right:6vw;}
+.crumb a{font-size:13px;color:var(--ink-soft);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:1px;}
+.crumb a:hover{color:var(--maroon);}
+
+/* ---------- 首頁：翻開的日記 ---------- */
+.spread{position:relative;max-width:1040px;margin:8vh auto 10vh;padding:0 6vw;display:grid;grid-template-columns:1fr 1fr;gap:0;}
+.page{padding:48px 44px;position:relative;}
+.page-left{border-right:1px dashed var(--line);}
+.eyebrow{font-size:13px;letter-spacing:.2em;color:var(--gold);margin:0 0 18px;}
+h1{font-family:'LXGW WenKai TC','Noto Serif TC',serif;font-weight:600;font-size:30px;line-height:1.6;margin:0 0 28px;color:var(--ink);}
+.intro-line{font-size:15px;color:var(--ink-soft);margin:0 0 8px;}
+.hidden-link-line{margin-top:22px;}
+.hidden-link{color:inherit;text-decoration:none;}
+.date-mark{margin-top:36px;font-size:13px;color:var(--ink-soft);letter-spacing:.1em;}
+.ribbon{position:absolute;top:-6vh;right:44px;width:26px;height:110%;background:var(--maroon);clip-path:polygon(0 0,100% 0,100% 92%,50% 100%,0 92%);opacity:.9;}
+.page-right{padding-top:48px;}
+.entries{list-style:none;margin:0;padding:0;}
+.entries li{border-bottom:1px solid var(--line);}
+.entries li:first-child{border-top:none;}
+.entries a{display:block;padding:18px 4px;margin:0 -4px;text-decoration:none;color:inherit;border-radius:4px;transition:background-color .15s ease;}
+.entries a:hover{background:var(--paper-2);}
+.entries a:hover .entry-title{color:var(--maroon);}
+.entry-label{font-size:12px;letter-spacing:.15em;color:var(--fog);display:block;margin-bottom:4px;}
+.entry-title{font-family:'LXGW WenKai TC','Noto Serif TC',serif;font-size:20px;color:var(--ink);margin:0;}
+.entry-desc{font-size:13px;color:var(--ink-soft);margin:6px 0 0;}
+
+/* ---------- 企劃主頁 hero（惡夢之街） ---------- */
+.hero{position:relative;max-width:1040px;margin:0 auto;padding:10vh 6vw 8vh;border-bottom:1px dashed var(--line);}
+.hero .eyebrow{font-size:13px;letter-spacing:.2em;color:var(--maroon-soft);margin:0 0 18px;}
+.hero h1{font-family:'LXGW WenKai TC','Noto Serif TC',serif;font-weight:600;font-size:34px;margin:0 0 28px;}
+.hero p{max-width:520px;font-size:15px;color:var(--ink-soft);margin:0 0 6px;}
+.hero .site-link{
+  display:inline-block;margin-top:48px;font-size:13px;color:var(--ink-soft);
+  background:rgba(122,115,106,.08);border:1px solid var(--line);text-decoration:none;
+  padding:6px 14px;border-radius:16px;transition:background-color .15s ease, border-color .15s ease;
+}
+.hero .site-link:hover{background:rgba(122,115,106,.14);border-color:var(--ink-soft);color:var(--ink);}
+.murmur{max-width:640px;margin:0 0 6px;line-height:1.5;letter-spacing:.02em;}
+.murmur span{display:inline-block;}
+@keyframes flicker{0%,100%{opacity:1;}45%{opacity:1;}47%{opacity:.4;}49%{opacity:1;}72%{opacity:1;}73%{opacity:.5;}75%{opacity:1;}}
+.nightmare-word{color:var(--maroon);font-weight:600;animation:flicker 4.5s ease-in-out infinite;}
+@media (prefers-reduced-motion: reduce){.nightmare-word{animation:none;}}
+
+/* ---------- 目錄：分幕結構 ---------- */
+.toc{max-width:1040px;margin:0 auto;padding:8vh 6vw 10vh;}
+.toc.tight{padding-top:2vh;}
+.toc-heading{font-size:13px;letter-spacing:.2em;color:var(--gold);margin:0 0 32px;}
+.act{display:grid;grid-template-columns:180px 1fr;gap:24px;padding:22px 0;border-top:1px solid var(--line);}
+.act:last-child{border-bottom:1px solid var(--line);}
+.act-name{font-family:'LXGW WenKai TC','Noto Serif TC',serif;font-size:19px;color:var(--ink);padding-top:2px;}
+.act-name .sub{display:block;font-size:15px;color:var(--fog);letter-spacing:.08em;margin-top:4px;font-family:'LXGW WenKai TC','Noto Serif TC',serif;}
+.chapters{display:flex;flex-wrap:wrap;gap:10px 28px;}
+.chapters a{color:var(--ink-soft);text-decoration:none;font-size:14px;padding:4px 10px;margin:-4px -10px;border-radius:4px;border-bottom:1px solid transparent;transition:background-color .15s ease, color .15s ease;}
+.chapters a:hover{color:var(--maroon);background:var(--paper-2);border-color:var(--maroon-soft);}
+.chapters span{font-size:14px;color:var(--ink-soft);}
+.chapters .unreleased,.chapters span.unreleased{color:var(--line);}
+
+/* ---------- 角色拉頁 ---------- */
+.character-tab{max-width:1040px;margin:0 auto 10vh;padding:0 6vw;}
+.character-tab a{display:flex;align-items:center;justify-content:space-between;text-decoration:none;color:var(--ink);background:var(--paper-2);border:1px solid var(--line);border-radius:6px;padding:20px 28px;}
+.character-tab .label{font-size:12px;letter-spacing:.15em;color:var(--fog);display:block;margin-bottom:4px;}
+.character-tab .name{font-family:'LXGW WenKai TC','Noto Serif TC',serif;font-size:20px;}
+.character-tab .arrow{font-size:20px;color:var(--maroon-soft);}
+
+/* ---------- 角色 / Sirius 頁面 ---------- */
+.profile{max-width:1040px;margin:0 auto;padding:4vh 6vw 6vh;display:grid;grid-template-columns:180px 1fr;gap:40px;align-items:start;border-bottom:1px dashed var(--line);}
+.portrait{width:180px;height:220px;background:var(--paper-2);border:1px solid var(--line);border-radius:4px;background-size:cover;background-position:center;}
+.profile-name{font-family:'LXGW WenKai TC','Noto Serif TC',serif;font-size:32px;margin:0 0 16px;}
+.profile-quote{font-size:14px;color:var(--ink-soft);margin:0 0 4px;font-style:italic;}
+.taglines{list-style:none;margin:0;padding:0;}
+.taglines li{font-size:14px;color:var(--ink-soft);margin:0 0 8px;padding-left:16px;position:relative;}
+.taglines li::before{content:"►";position:absolute;left:0;color:var(--gold);font-size:10px;top:5px;}
+.taglines b{color:var(--ink);font-weight:500;}
+
+.bio{max-width:1040px;margin:0 auto;padding:6vh 6vw;border-bottom:1px dashed var(--line);}
+.bio-section{margin-bottom:5vh;}
+.bio-section:last-child{margin-bottom:0;}
+.bio-label{font-size:13px;letter-spacing:.2em;color:var(--gold);margin:0 0 14px;}
+.bio-section p{max-width:620px;font-size:15px;color:var(--ink);margin:0 0 4px;}
+.bio-section p.soft{color:var(--ink-soft);font-size:14px;}
+
+.ability-card{max-width:620px;background:var(--paper-2);border:1px solid var(--line);border-radius:8px;padding:24px 28px;margin-top:8px;}
+.ability-card ul{margin:0 0 16px;padding-left:20px;}
+.ability-card li{font-size:14px;color:var(--ink);margin-bottom:4px;}
+.ability-note{font-size:13px;color:var(--ink-soft);border-top:1px dashed var(--line);padding-top:14px;margin-top:14px;}
+
+.encounters{max-width:1040px;margin:0 auto;padding:6vh 6vw 10vh;}
+.encounters-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px;}
+.encounters-head a{font-size:13px;color:var(--ink-soft);text-decoration:none;border-bottom:1px solid var(--line);}
+.encounters-head a:hover{color:var(--maroon);}
+.encounters-note{font-size:13px;color:var(--ink-soft);margin:0 0 28px;}
+.place-group{padding:16px 0;border-top:1px solid var(--line);}
+.place-group:last-child{border-bottom:1px solid var(--line);}
+.place-name{font-family:'LXGW WenKai TC','Noto Serif TC',serif;font-size:15px;color:var(--fog);min-width:110px;display:inline-block;vertical-align:top;}
+.place-people{display:inline-flex;flex-wrap:wrap;gap:6px 20px;max-width:76%;}
+.place-people a{font-size:14px;color:var(--ink-soft);text-decoration:none;border-bottom:1px solid transparent;}
+.place-people a:hover{color:var(--maroon);border-color:var(--maroon-soft);}
+
+/* ---------- NPC 名冊 ---------- */
+.roster{max-width:1040px;margin:0 auto;padding:6vh 6vw 10vh;}
+.roster-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:32px;}
+.roster-head a{font-size:13px;color:var(--ink-soft);text-decoration:none;border-bottom:1px solid var(--line);}
+.roster-head a:hover{color:var(--maroon);}
+.npc{display:grid;grid-template-columns:140px 1fr;gap:24px;padding:22px 0;border-top:1px solid var(--line);}
+.npc:last-child{border-bottom:1px solid var(--line);}
+.npc-name{font-family:'LXGW WenKai TC','Noto Serif TC',serif;font-size:18px;color:var(--ink);padding-top:2px;}
+.npc-desc{font-size:14px;color:var(--ink-soft);max-width:560px;}
+
+.page-head{max-width:1040px;margin:0 auto;padding:4vh 6vw 2vh;}
+.page-head .eyebrow{font-size:13px;letter-spacing:.2em;color:var(--gold);margin:0 0 12px;}
+.page-head h1{font-family:'LXGW WenKai TC','Noto Serif TC',serif;font-size:28px;margin:0;}
+
+.npc-roster-grid{max-width:1040px;margin:0 auto;padding:4vh 6vw 10vh;display:grid;grid-template-columns:1fr 1fr;gap:0;}
+.npc-card{padding:32px;border-top:1px solid var(--line);display:flex;gap:20px;}
+.npc-card:nth-child(odd){border-right:1px dashed var(--line);}
+.npc-card:nth-last-child(-n+2){border-bottom:1px solid var(--line);}
+.npc-portrait{width:110px;height:140px;flex:none;background:var(--paper-2);border:1px solid var(--line);border-radius:8px;background-size:cover;background-position:center;}
+.npc-body .role{font-size:12px;letter-spacing:.1em;color:var(--fog);display:block;margin-bottom:4px;}
+.npc-body .name{font-family:'LXGW WenKai TC','Noto Serif TC',serif;font-size:20px;margin:0 0 10px;}
+.npc-body p.desc{font-size:14px;color:var(--ink-soft);margin:0;}
+
+/* ---------- 正文閱讀頁 ---------- */
+.story{max-width:720px;margin:0 auto;padding:4vh 40px 6vh;}
+.story.narrow{max-width:680px;padding:4vh 40px 10vh;}
+.story-head{margin-bottom:5vh;}
+.story-eyebrow{font-size:13px;letter-spacing:.2em;color:var(--gold);margin:0 0 10px;}
+.story-title{font-family:'LXGW WenKai TC','Noto Serif TC',serif;font-size:26px;margin:0;}
+.story-credit{font-size:13px;color:var(--ink-soft);margin:14px 0 0;}
+.story-credit a{color:var(--ink-soft);}
+.story-date{font-size:12px;letter-spacing:.15em;color:var(--fog);margin:0 0 10px;}
+.story-illust{margin:0 0 6vh;text-align:center;}
+.story-illust img{max-width:100%;border-radius:4px;border:1px solid var(--line);}
+.story-body p{font-size:16px;color:var(--ink);margin:0 0 1.4em;}
+
+.story-nav{max-width:720px;margin:0 auto;padding:6vh 40px 8vh;border-top:1px dashed var(--line);display:flex;justify-content:space-between;gap:20px;}
+.story-nav a{flex:1;text-decoration:none;color:var(--ink);padding:16px 20px;border:1px solid var(--line);border-radius:6px;transition:background-color .15s ease, border-color .15s ease;}
+.story-nav a:hover{background:var(--paper-2);border-color:var(--ink-soft);}
+.story-nav a.next{text-align:right;}
+.story-nav .dir{display:block;font-size:11px;letter-spacing:.15em;color:var(--fog);margin-bottom:4px;}
+.story-nav .chap{font-family:'LXGW WenKai TC','Noto Serif TC',serif;font-size:15px;}
+
+/* ---------- Tick Tock 主頁：滴答 ---------- */
+.poem{max-width:640px;margin:0 auto;padding:14vh 6vw 12vh;text-align:center;}
+.poem p{font-size:16px;color:var(--ink-soft);margin:0 0 8px;}
+.poem .drips{margin:32px 0;}
+.poem .drip{font-family:'LXGW WenKai TC','Noto Serif TC',serif;color:var(--fog);margin:0 0 6px;transition:margin-left .2s ease;}
+.poem .drip:nth-child(1){margin-left:0;}
+.poem .drip:nth-child(2){margin-left:6%;}
+.poem .drip:nth-child(3){margin-left:16%;}
+.poem .drip:nth-child(4){margin-left:30%;}
+.poem .drip:nth-child(5){margin-top:22px;margin-left:0;}
+.poem .final{margin-top:36px;color:var(--ink);}
+.site-link{
+  display:inline-block;font-size:13px;color:var(--ink-soft);background:rgba(122,115,106,.08);
+  border:1px solid var(--line);text-decoration:none;padding:6px 14px;border-radius:16px;
+  transition:background-color .15s ease, border-color .15s ease;
+}
+.site-link:hover{background:rgba(122,115,106,.14);border-color:var(--ink-soft);color:var(--ink);}
+
+.entries-list{max-width:1040px;margin:0 auto;padding:0 6vw 12vh;border-top:1px dashed var(--line);}
+.entries-list a{display:flex;align-items:baseline;gap:20px;text-decoration:none;color:var(--ink);padding:24px 4px;margin:0 -4px;border-bottom:1px solid var(--line);border-radius:4px;transition:background-color .15s ease;}
+.entries-list a:hover{background:var(--paper-2);}
+.entries-list .label{font-size:12px;letter-spacing:.15em;color:var(--fog);min-width:120px;flex:none;}
+.entries-list .name{font-family:'LXGW WenKai TC','Noto Serif TC',serif;font-size:20px;margin:0;min-width:160px;flex:none;}
+.entries-list .desc{font-size:13px;color:var(--ink-soft);margin:0;}
+
+/* ---------- 晝行之夜：雜訊散落 ---------- */
+.opening{max-width:1040px;margin:0 auto;padding:9vh 6vw 0;text-align:center;}
+.opening p{font-size:16px;color:var(--ink-soft);margin:0;}
+.noise-field{position:relative;max-width:1040px;margin:0 auto;padding:0 6vw;height:820px;}
+.whisper{position:absolute;font-size:15px;color:var(--fog);opacity:0;transform:translateY(16px);transition:opacity .8s ease, transform .8s ease;white-space:nowrap;}
+.whisper.in-view{opacity:.55;transform:translateY(0);}
+.whisper.w-gold{color:var(--gold);}
+.whisper.w-fade.in-view{opacity:.3;}
+.whisper.w-dim.in-view{opacity:.4;}
+.noise-block{position:absolute;opacity:0;transition:opacity .8s ease;background-image:radial-gradient(var(--ink-soft) 1px, transparent 1.4px);background-size:5px 5px;}
+.noise-block.in-view{opacity:.18;}
+.closing{max-width:1040px;margin:0 auto;padding:0 6vw 14vh;text-align:center;}
+.warning-line{font-size:15px;letter-spacing:.4em;color:var(--maroon);font-weight:400;margin:0 0 8px;}
+.closing .sub{font-size:15px;color:var(--ink-soft);margin:0 0 6vh;}
+.trail{font-size:14px;color:var(--line);letter-spacing:.2em;margin:0 0 6vh;}
+
+/* ---------- 讀喃隱藏頁 ---------- */
+.wrap{max-width:720px;margin:0 auto;padding:10vh 40px 12vh;text-align:center;}
+.gate-portrait{width:80px;height:80px;border-radius:50%;background:var(--paper-2);border:1px solid var(--line);margin:0 auto 28px;}
+.greet{font-size:15px;color:var(--ink-soft);margin:0 0 8vh;}
+.msg{text-align:left;max-width:620px;margin:0 auto;}
+.msg p{font-size:14px;color:var(--ink-soft);margin:0 0 1.6em;}
+.msg b{color:var(--ink);font-weight:500;}
+.final-line{text-align:center;margin-top:6vh;font-size:14px;color:var(--ink-soft);}
+.final-line a{color:inherit;text-decoration:none;}
+
+.duonan-intro{max-width:560px;margin:0 auto;padding:9vh 6vw 8vh;text-align:center;}
+.duonan-avatar{width:64px;height:64px;border-radius:50%;border:1px solid var(--line);margin:0 auto 24px;object-fit:cover;}
+.duonan-label{font-size:12px;letter-spacing:.2em;color:var(--gold);margin:0 0 20px;}
+.duonan-entries{max-width:560px;margin:0 auto;padding:6vh 6vw 12vh;border-top:1px dashed var(--line);}
+.duonan-entry{display:block;text-decoration:none;color:var(--ink);padding:22px 4px;margin:0 -4px;border-bottom:1px solid var(--line);border-radius:4px;transition:background-color .15s ease;}
+.duonan-entry:hover{background:var(--paper-2);}
+.duonan-entry .date{font-size:12px;color:var(--fog);letter-spacing:.1em;display:block;margin-bottom:6px;}
+.duonan-entry .title{font-family:'LXGW WenKai TC','Noto Serif TC',serif;font-size:17px;margin:0 0 6px;}
+.duonan-entry .snippet{font-size:13px;color:var(--ink-soft);margin:0;}
+
+/* ---------- 頁尾 ---------- */
+footer{text-align:center;padding:0 6vw 60px;font-size:12px;color:var(--ink-soft);letter-spacing:.1em;}
+footer .back-home,footer .back-parent{
+  display:block;font-size:13px;color:var(--ink-soft);text-decoration:none;
+  border-bottom:1px solid var(--line);padding-bottom:2px;margin:0 auto 40px;width:fit-content;
+}
+footer .back-home:hover,footer .back-parent:hover{color:var(--maroon);border-color:var(--maroon-soft);}
+footer .mark{font-size:16px;color:var(--gold);margin:0 auto 12px;letter-spacing:.3em;}
+
+/* ---------- RWD ---------- */
+@media (max-width:760px){
+  header{flex-direction:column;gap:16px;}
+  header.minimal{flex-direction:row;}
+  .spread{grid-template-columns:1fr;}
+  .page-left{border-right:none;border-bottom:1px dashed var(--line);}
+  .ribbon{display:none;}
+  .profile{grid-template-columns:120px 1fr;}
+  .portrait{width:120px;height:150px;}
+  .npc{grid-template-columns:1fr;}
+  .npc-roster-grid{grid-template-columns:1fr;}
+  .npc-card:nth-child(odd){border-right:none;}
+  .npc-card{flex-direction:column;}
+  .act{grid-template-columns:1fr;}
+  .story-nav{flex-direction:column;}
+  .story-nav a.next{text-align:left;}
+  .place-people{max-width:100%;display:flex;}
+}
