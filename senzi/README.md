@@ -2,20 +2,43 @@
 
 這是可以直接上傳到 GitHub `notes` repo 裡 `senzi/` 資料夾的完整靜態網站，純 HTML + CSS，沒有用任何框架（不需要 Jekyll / Hugo 之類的建置流程），上傳後開啟 GitHub Pages 就能直接運作。
 
+## 網站架構（改版後）
+
+導覽列現在是四個項目：**押花手帳｜文屋千蒔｜無生｜藏圖閣**
+
+- **押花手帳**（`oshibana-techo.html`）：全部文章（文屋千蒔／宵闇異聞／無生／未分類）合併在一起，新到舊排序
+- **文屋千蒔**（`wenwu-qianshi.html`）／**無生**（`wusheng.html`）：角色介紹頁，不再是文章列表
+- **藏圖閣**（`gallery.html`）：不變
+
+原本「文屋千蒔」「無生」的分類文章列表搬到新網址：
+- 文屋千蒔分類文章列表 → `archive-wenwu-qianshi.html`
+- 無生分類文章列表 → `archive-wusheng.html`
+- 宵闇異聞分類文章列表 → `xiaoan-yiwen.html`（網址不變，但不再放在導覽列，只能透過文章 tag 點擊到達）
+- 未分類 → `unsorted.html`（同上，不放導覽列，只能透過押花手帳裡的文章直接點進去）
+
+所有文章卡片與文章內頁上的分類標籤（tag），點下去都會連到對應的 archive 頁面。
+
+## 角色介紹頁的圖片說明
+
+文屋千蒔、無生頁面裡使用的圖片，目前直接連到 Plurk 圖床的外部網址（不是存在 `images/` 資料夾裡），這樣網站可以正常運作，但長期穩定性不如自己存放圖片。如果之後想把這兩張圖也下載存進 `images/` 資料夾，改成本地路徑會更保險，可以再跟我說。
+
 ## 資料夾結構
 
 ```
 senzi/
-├── index.html              首頁
-├── style.css                共用樣式表
-├── wenwu-qianshi.html        分類頁：文屋千蒔
-├── xiaoan-yiwen.html          分類頁：宵闇異聞
-├── wusheng.html               分類頁：無生
-├── unsorted.html               分類頁：未分類
-├── gallery.html                 藏圖閣
-├── posts/                        16 篇文章內頁
+├── index.html                      首頁
+├── style.css                       共用樣式表
+├── oshibana-techo.html             押花手帳（全部文章合併列表）
+├── wenwu-qianshi.html              文屋千蒔角色介紹頁
+├── wusheng.html                    無生角色介紹頁
+├── archive-wenwu-qianshi.html      文屋千蒔分類文章列表
+├── archive-wusheng.html            無生分類文章列表
+├── xiaoan-yiwen.html                宵闇異聞分類文章列表
+├── unsorted.html                    未分類文章列表
+├── gallery.html                     藏圖閣
+├── posts/                           16 篇文章內頁
 │   └── *.html
-└── images/                        圖片存放處（目前是空的，見下方）
+└── images/                          圖片存放處（見下方下載清單）
 ```
 
 ## 圖片下載清單
