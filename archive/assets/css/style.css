@@ -293,17 +293,23 @@ footer .mark{font-size:16px;color:var(--gold);margin:0 auto 12px;letter-spacing:
 
 /* ---------- RWD ---------- */
 @media (max-width:760px){
-  header{flex-direction:column;gap:16px;}
+  header{flex-direction:column;gap:16px;padding-left:20px;padding-right:20px;}
   header.minimal{flex-direction:row;}
-  nav{display:grid;grid-template-columns:1fr 1fr;width:100%;}
+  nav{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    width:calc(100% + 40px);
+    margin:0 -20px;
+  }
   nav a{
     text-align:center;
     padding:12px 8px;
-    border-left:1px solid var(--line);
+    border-left:none;
+    border-right:none;
     border-bottom:1px solid var(--line);
   }
-  nav a:nth-child(2n){border-right:1px solid var(--line);}
-  nav a.active::before{bottom:-4px;}
+  nav a:nth-child(2n){border-left:1px solid var(--line);}
+  nav a.active::before{display:none;}
   .spread{grid-template-columns:1fr;}
   .page-left{border-right:none;border-bottom:1px dashed var(--line);}
   .ribbon{display:none;}
