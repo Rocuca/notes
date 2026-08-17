@@ -12,4 +12,6 @@
 - 1585722.png　（原始網址：https://lenxia.weebly.com/uploads/1/4/6/6/14665162/1585722.png　／　用在：ticktock/npc.html）
 - 2493143.png　（原始網址：https://lenxia.weebly.com/uploads/1/4/6/6/14665162/2493143.png　／　用在：ticktock/npc.html）
 - 6253597.png　（原始網址：https://lenxia.weebly.com/uploads/1/4/6/6/14665162/6253597.png　／　用在：ticktock/npc.html）
+- 423271.jpg　（原始網址：https://lenxia.weebly.com/uploads/1/4/6/6/14665162/423271.jpg　／　用在：duonan/gate.html）
 - 4966089.jpg　（原始網址：https://lenxia.weebly.com/uploads/1/4/6/6/14665162/4966089.jpg　／　用在：duonan/index.html）
+- 4402431_orig.jpg　（原始網址：https://lenxia.weebly.com/uploads/1/4/6/6/14665162/4402431_orig.jpg　／　用在：duonan/2016-02-17.html）
