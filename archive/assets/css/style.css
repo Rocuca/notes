@@ -127,9 +127,9 @@ h1{font-family:'LXGW WenKai TC','Noto Serif TC',serif;font-weight:600;font-size:
 .act-name{font-family:'LXGW WenKai TC','Noto Serif TC',serif;font-size:19px;color:var(--ink);padding-top:2px;}
 .act-name .sub{display:block;font-size:15px;color:var(--fog);letter-spacing:.08em;margin-top:4px;font-family:'LXGW WenKai TC','Noto Serif TC',serif;}
 .chapters{display:flex;flex-wrap:wrap;gap:10px 28px;}
-.chapters a{color:var(--ink-soft);text-decoration:none;font-size:14px;padding:4px 10px;margin:-4px -10px;border-radius:4px;border-bottom:1px solid transparent;transition:background-color .15s ease, color .15s ease;}
+.chapters a{color:var(--ink-soft);text-decoration:none;font-size:15px;padding:4px 10px;margin:-4px -10px;border-radius:4px;border-bottom:1px solid transparent;transition:background-color .15s ease, color .15s ease;}
 .chapters a:hover{color:var(--maroon);background:var(--paper-2);border-color:var(--maroon-soft);}
-.chapters span{font-size:14px;color:var(--ink-soft);}
+.chapters span{font-size:15px;color:var(--ink-soft);}
 .chapters .unreleased,.chapters span.unreleased{color:var(--line);}
 
 /* ---------- 角色拉頁 ---------- */
@@ -244,7 +244,7 @@ h1{font-family:'LXGW WenKai TC','Noto Serif TC',serif;font-weight:600;font-size:
 .entries-list a:hover{background:var(--paper-2);}
 .entries-list .label{font-size:12px;letter-spacing:.15em;color:var(--fog);min-width:120px;flex:none;}
 .entries-list .name{font-family:'LXGW WenKai TC','Noto Serif TC',serif;font-size:20px;margin:0;min-width:160px;flex:none;}
-.entries-list .desc{font-size:13px;color:var(--ink-soft);margin:0;}
+.entries-list .desc{font-size:15px;color:var(--ink-soft);margin:0;}
 
 /* ---------- 晝行之夜：雜訊散落 ---------- */
 .opening{max-width:1040px;margin:0 auto;padding:9vh 6vw 0;text-align:center;}
@@ -295,6 +295,15 @@ footer .mark{font-size:16px;color:var(--gold);margin:0 auto 12px;letter-spacing:
 @media (max-width:760px){
   header{flex-direction:column;gap:16px;}
   header.minimal{flex-direction:row;}
+  nav{display:grid;grid-template-columns:1fr 1fr;width:100%;}
+  nav a{
+    text-align:center;
+    padding:12px 8px;
+    border-left:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  nav a:nth-child(2n){border-right:1px solid var(--line);}
+  nav a.active::before{bottom:-4px;}
   .spread{grid-template-columns:1fr;}
   .page-left{border-right:none;border-bottom:1px dashed var(--line);}
   .ribbon{display:none;}
